@@ -90,10 +90,13 @@ public class EmployeeController {
         log.info("新增员工,信息:{}", employee.toString());
         //设置初始密码,加密
         employee.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
-        employee.setCreateTime(LocalDateTime.now());
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setCreateUser((Long) request.getSession().getAttribute("employee"));
-        employee.setUpdateUser((Long) request.getSession().getAttribute("employee"));
+
+        //公共部分统一处理:
+//        employee.setCreateTime(LocalDateTime.now());
+//        employee.setUpdateTime(LocalDateTime.now());
+//        employee.setCreateUser((Long) request.getSession().getAttribute("employee"));
+//        employee.setUpdateUser((Long) request.getSession().getAttribute("employee"));
+
         //校验前端传来的employee对象,然后service-dao传入数据库
         employeeService.save(employee);//MP-IService的save方法写sql语句
         return Return.success("add employee success");
