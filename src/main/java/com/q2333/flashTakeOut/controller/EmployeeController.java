@@ -127,9 +127,9 @@ public class EmployeeController {
     public Return<String> update
     (HttpServletRequest request, @RequestBody Employee employee) {
         log.info(employee.toString());
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setUpdateUser//查询id,设置更新数据的操作者
-                ((Long) request.getSession().getAttribute("employee"));
+//        employee.setUpdateTime(LocalDateTime.now());
+//        employee.setUpdateUser//查询id,设置更新数据的操作者
+//                ((Long) request.getSession().getAttribute("employee"));
         employeeService.updateById(employee);//映射sql语句
         return Return.success("员工信息修改成");
     }

@@ -1,8 +1,10 @@
 package com.q2333.flashTakeOut.filter;
 
 import com.alibaba.fastjson.JSON;
+import com.q2333.flashTakeOut.common.BaseContext;
 import com.q2333.flashTakeOut.common.Return;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.jni.Thread;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.util.AntPathMatcher;
 
@@ -32,6 +34,7 @@ public class LoginCheckFilter implements Filter {
             throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
+
         String requestURI = request.getRequestURI();
         log.info("拦截到本次请求路径 {}" + requestURI);
         String[] release_urls = new String[]{//直接放行的请求:如登录页面
@@ -48,6 +51,8 @@ public class LoginCheckFilter implements Filter {
         if (request.getSession().getAttribute("employee") != null) {
             log.info("用户登录已经登录态,id为: {}",
                     request.getSession().getAttribute("employee"));//K:employee, V:id
+            BaseContext.setCurrentId
+                    ((Long) request.getSession().getAttribute("employee"));
             filterChain.doFilter(request, response);//执行拦截器:放行
             return;
         }
