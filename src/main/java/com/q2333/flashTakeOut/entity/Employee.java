@@ -3,6 +3,7 @@ package com.q2333.flashTakeOut.entity;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
  * 员工实体类
  * 对应数据库
  */
+@SuppressWarnings("all")
 @Data
 public class Employee implements Serializable {
 
@@ -31,8 +33,10 @@ public class Employee implements Serializable {
 
     private Integer status;
 
+    @TableField(fill = FieldFill.INSERT)//插入式自动填充字段
     private LocalDateTime createTime;
 
+    @TableField(fill = FieldFill.INSERT_UPDATE)//插入更新都填充
     private LocalDateTime updateTime;
 
     @TableField(fill = FieldFill.INSERT)
