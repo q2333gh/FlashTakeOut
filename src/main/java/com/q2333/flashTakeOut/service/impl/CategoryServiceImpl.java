@@ -2,6 +2,7 @@ package com.q2333.flashTakeOut.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.q2333.flashTakeOut.common.CustomException;
 import com.q2333.flashTakeOut.entity.Category;
 
 import com.q2333.flashTakeOut.entity.Dish;
@@ -31,13 +32,13 @@ public class CategoryServiceImpl
         LambdaQueryWrapper<Dish> dishQueryWrapper = new LambdaQueryWrapper<>();
         dishQueryWrapper.eq(Dish::getCategoryId,id);
         if (dishService.count(dishQueryWrapper)>0){
-
+            throw  new CustomException("当前分类关联了菜品信息,不能删除");
         }
         LambdaQueryWrapper<Setmeal>
                 setmealQueryWrapper = new LambdaQueryWrapper<>();
         setmealQueryWrapper.eq(Setmeal::getCategoryId,id);
         if (setmealService.count()>0){
-
+            throw  new CustomException("当前分类关联了套餐信息,不能删除");
         }
         super.removeById(id);
     }

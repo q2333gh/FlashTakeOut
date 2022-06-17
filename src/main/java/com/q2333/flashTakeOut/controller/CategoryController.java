@@ -59,8 +59,8 @@ public class CategoryController {
      */
     @DeleteMapping
     public Return<String> delete(Long id){
-
-        return null;
+        categoryService.remove(id);
+        return Return.success("分类信息删除成功");
     }
 }
 
