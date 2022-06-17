@@ -4,8 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.q2333.flashTakeOut.common.BaseContext;
 import com.q2333.flashTakeOut.common.Return;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.jni.Thread;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.util.AntPathMatcher;
 
 import javax.servlet.*;

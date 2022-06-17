@@ -7,10 +7,7 @@ import com.q2333.flashTakeOut.entity.Category;
 import com.q2333.flashTakeOut.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -18,6 +15,7 @@ import javax.annotation.Resource;
  * @author q2333
  * @date 2022/06/16 11:52
  **/
+@SuppressWarnings("all")
 @RestController
 @RequestMapping("/category")
 public class CategoryController {
@@ -41,15 +39,47 @@ public class CategoryController {
      * @param pageSize
      * @return
      */
-    @PostMapping
+    @GetMapping("/page")
     public Return<Page> page(int page,int pageSize){
-        //MP提供
+        //MP提供,分页构造器
         Page<Category> pageInfo=new Page<>(page,pageSize);
         //条件过滤器排序,sort
-        final LambdaQueryWrapper<Category> queryWrapper = new LambdaQueryWrapper<>();
+        LambdaQueryWrapper<Category> queryWrapper =
+                new LambdaQueryWrapper<>();
         queryWrapper.orderByAsc(Category::getSort);
         //查询
         categoryService.page(pageInfo,queryWrapper);
         return Return.success(pageInfo);
     }
+
+    /**
+     *根据id删除
+     * @param id
+     * @return
+     */
+    @DeleteMapping
+    public Return<String> delete(Long id){
+
+        return null;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
