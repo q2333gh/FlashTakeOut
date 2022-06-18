@@ -3,7 +3,6 @@ server:
   port: 8080
 spring:
   application:
-#    应用名称
     name: flash_take_out
   datasource:
     druid:
@@ -21,3 +20,6 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: ASSIGN_ID
+flash:
+  path: C:\Code\SpringBootProjects\flashTakeOut\src\main\resources\pics\
+

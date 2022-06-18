@@ -24,7 +24,7 @@ public class Dish implements Serializable {
     private String name;
 
 
-    //菜品分类id
+    //菜品分类id,要返回给前端需要转义
     private Long categoryId;
 
 

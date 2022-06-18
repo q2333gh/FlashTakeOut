@@ -3,6 +3,7 @@ package com.q2333.flashTakeOut.mapper;
 import com.q2333.flashTakeOut.entity.Dish;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
 * @author 白桃乌龙
@@ -10,6 +11,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2022-06-17 09:07:10
 * @Entity generator.domain.Dish
 */
+@Mapper
 public interface DishMapper extends BaseMapper<Dish> {
 
 }

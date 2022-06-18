@@ -5,7 +5,7 @@
       <TemplateContext>
         <option name="generateConfig">
           <GenerateConfig>
-            <option name="annotationType" value="NONE" />
+            <option name="annotationType" value="MYBATIS_PLUS3" />
             <option name="basePackage" value="generator" />
             <option name="basePath" value="src/main/java" />
             <option name="classNameStrategy" value="camel" />
@@ -16,7 +16,7 @@
             <option name="ignoreTablePrefix" value="" />
             <option name="ignoreTableSuffix" value="" />
             <option name="moduleName" value="flashTakeOut" />
-            <option name="modulePath" value="$PROJECT_DIR$/mpx" />
+            <option name="modulePath" value="$PROJECT_DIR$" />
             <option name="moduleUIInfoList">
               <list>
                 <ModuleInfoGo>
@@ -25,7 +25,7 @@
                   <option name="encoding" value="${domain.encoding}" />
                   <option name="fileName" value="${domain.fileName}Mapper" />
                   <option name="fileNameWithSuffix" value="${domain.fileName}Mapper.java" />
-                  <option name="modulePath" value="$PROJECT_DIR$/mpx" />
+                  <option name="modulePath" value="$PROJECT_DIR$" />
                   <option name="packageName" value="${domain.basePackage}.mapper" />
                 </ModuleInfoGo>
                 <ModuleInfoGo>
@@ -34,7 +34,7 @@
                   <option name="encoding" value="${domain.encoding}" />
                   <option name="fileName" value="${domain.fileName}Mapper" />
                   <option name="fileNameWithSuffix" value="${domain.fileName}Mapper.xml" />
-                  <option name="modulePath" value="$PROJECT_DIR$/mpx" />
+                  <option name="modulePath" value="$PROJECT_DIR$" />
                   <option name="packageName" value="mapper" />
                 </ModuleInfoGo>
                 <ModuleInfoGo>
@@ -43,7 +43,7 @@
                   <option name="encoding" value="${domain.encoding}" />
                   <option name="fileName" value="${domain.fileName}ServiceImpl" />
                   <option name="fileNameWithSuffix" value="${domain.fileName}ServiceImpl.java" />
-                  <option name="modulePath" value="$PROJECT_DIR$/mpx" />
+                  <option name="modulePath" value="$PROJECT_DIR$" />
                   <option name="packageName" value="${domain.basePackage}.service.impl" />
                 </ModuleInfoGo>
                 <ModuleInfoGo>
@@ -52,7 +52,7 @@
                   <option name="encoding" value="${domain.encoding}" />
                   <option name="fileName" value="${domain.fileName}Service" />
                   <option name="fileNameWithSuffix" value="${domain.fileName}Service.java" />
-                  <option name="modulePath" value="$PROJECT_DIR$/mpx" />
+                  <option name="modulePath" value="$PROJECT_DIR$" />
                   <option name="packageName" value="${domain.basePackage}.service" />
                 </ModuleInfoGo>
               </list>
@@ -63,14 +63,6 @@
             <option name="superClass" value="" />
             <option name="tableUIInfoList">
               <list>
-                <TableUIInfo>
-                  <option name="className" value="Setmeal" />
-                  <option name="tableName" value="setmeal" />
-                </TableUIInfo>
-                <TableUIInfo>
-                  <option name="className" value="Dish" />
-                  <option name="tableName" value="dish" />
-                </TableUIInfo>
                 <TableUIInfo>
                   <option name="className" value="SetmealDish" />
                   <option name="tableName" value="setmeal_dish" />

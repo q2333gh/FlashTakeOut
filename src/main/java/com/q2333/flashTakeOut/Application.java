@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @author q2333
@@ -13,6 +14,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @Slf4j//log注解类
 @SpringBootApplication
 @ServletComponentScan//扫描WebFilter.创建过滤器
+@EnableTransactionManagement
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);

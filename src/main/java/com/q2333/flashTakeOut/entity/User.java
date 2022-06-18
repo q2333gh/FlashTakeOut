@@ -12,10 +12,15 @@ import com.baomidou.mybatisplus.annotation.TableId;
  */
 @Data
 public class User implements Serializable {
+    public User(Long id) {
+        this.id = id;
+    }
 
     private static final long serialVersionUID = 1L;
 
     private Long id;
+
+    //test:
 
 
     //姓名
@@ -40,4 +45,6 @@ public class User implements Serializable {
 
     //状态 0:禁用，1:正常
     private Integer status;
+
+
 }
